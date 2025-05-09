@@ -13,3 +13,8 @@ title = html.select("#firstHeading")[0].text
 paragraphs = html.select("p")
 for para in paragraphs:
     print(para.text)
+
+# Save the Introduction to a File
+intro = '\n'.join([para.text for para in paragraphs[0:5]])
+with open('intro.txt', 'w') as f:
+    f.write(intro)
